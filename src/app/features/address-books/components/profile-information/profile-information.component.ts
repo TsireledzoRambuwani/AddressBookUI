@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { AddressBook } from '../../models/addressbook.model';
 
 @Component({
   selector: 'app-profile-information',
@@ -7,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './profile-information.component.scss'
 })
 export class ProfileInformationComponent {
-
+  
+ addressBook = input.required<AddressBook>();
+ 
 }

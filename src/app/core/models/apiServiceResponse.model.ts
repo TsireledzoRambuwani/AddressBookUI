@@ -1,4 +1,4 @@
-export interface ApiServiceResponse<T> {
+export interface ApiServiceResponse{
     success:boolean;
     errors:string;
 }

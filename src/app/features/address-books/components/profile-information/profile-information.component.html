@@ -1,1 +1,17 @@
-<p>profile-information works!</p>
+    <div class="row mb-3">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+          <h1>{{addressBook().firstname}} {{addressBook().surname}} </h1> 
+
+           <div class="scrollable-paragraph">
+          <p>{{addressBook().about}}</p>
+          </div>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+       
+          <p>{{ addressBook().email }} | {{ addressBook().website }} | {{ addressBook().contacts }}  </p>
+       
+      </div>
+    </div>

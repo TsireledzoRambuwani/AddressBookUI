@@ -1,0 +1,26 @@
+<div class="container-fluid mt-5">
+  <app-header/>
+  <app-loading-spinner *ngIf="(loading$ | async)!"/>
+  @if(currentAddressBook)
+  {
+      <div class="row">
+
+      <div class="col-lg-4 col-md-12 col-sm-12">
+
+          <app-profile-image [imageUrl]="currentAddressBook.imageUrl"/>
+
+      </div>
+
+      <div class="col-lg-8 col-md-12 col-sm-12">
+
+        <app-profile-information [addressBook]="currentAddressBook"/>
+        <app-profile-buttons/>
+        <app-navigation-buttons/>
+
+      </div>
+    </div>
+
+
+  }
+
+</div>
