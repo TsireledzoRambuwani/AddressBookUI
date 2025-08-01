@@ -7,7 +7,7 @@ import { Store } from '@ngrx/store';
 import { AddressBookActions } from '../../store/actions/addressBook.action';
 import { selectAddressBooks } from '../../store/selectors/addressBook.selector';
 import { ProfileImageComponent } from '../../components/profile-image/profile-image.component';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NavigationButtonsComponent } from '../../components/navigation-buttons/navigation-buttons.component';
 import { ProfileButtonsComponent } from '../../components/profile-buttons/profile-buttons.component';
@@ -19,7 +19,6 @@ import { ProfileInformationComponent } from '../../components/profile-informatio
   imports: [
     HeaderComponent,
       CommonModule,
-      RouterLink,
       ProfileInformationComponent,
       ProfileButtonsComponent,
       HeaderComponent,
@@ -63,6 +62,10 @@ currentAddressBook!: AddressBook;
         this.currentAddressBook = this.addressBooks[this.currentIndex]   
        }   
 
+  }
+
+  requestCV(id: string){
+    console.log(id)
   }
 
   navigateFirst(){

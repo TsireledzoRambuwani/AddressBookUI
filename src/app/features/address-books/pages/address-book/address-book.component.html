@@ -1,7 +1,8 @@
 <div class="container-fluid mt-5">
   <app-header/>
   <app-loading-spinner *ngIf="(loading$ | async)!"/>
-  @if(currentAddressBook)
+
+  @if(addressBooks.length > 0)
   {
       <div class="row">
 
@@ -14,15 +15,29 @@
       <div class="col-lg-8 col-md-12 col-sm-12">
 
         <app-profile-information [addressBook]="currentAddressBook"/>
-        <app-profile-buttons/>
-        <app-navigation-buttons/>
+
+        <app-profile-buttons 
+            [websiteUrl]="currentAddressBook.website" 
+            [id]="currentAddressBook.id" 
+            (requestCv)="requestCV($event)"/>
+
+        <app-navigation-buttons 
+          (first)="navigateFirst()"
+          (last)="navigateLast()"
+          (next)="navigateNext()"
+          (previous)="navigatePrevious()"
+          [currentIndex]="currentIndex"
+          [addressBookLength]="addressBooks.length"
+          />
 
       </div>
     </div>
 
 
-  }@else {
-    <p>No Address book found</p>
+  }
+  @else
+  {
+<p>No Address Found</p>
   }
 
 </div>

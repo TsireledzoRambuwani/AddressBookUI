@@ -8,11 +8,6 @@ export const selectAddressBooks = createSelector(
   (state) => state.addressBooks
 );
 
-export const selectAddressBook = createSelector(
-  selectAddressBookState,
-  (state) => state.addressBook
-);
-
 export const selectAddressBookLoading = createSelector(
   selectAddressBookState,
   (state) => state.loading

@@ -24,19 +24,7 @@ export const AddressBookReducer = createReducer(
                 loading: false,
             }
         )),
-        on(AddressBookActions.loadAddressBooks, state => (
-            {
-                ...state, 
-                loading: true,
-            }
-        )),
-     on(AddressBookActions.loadAddressBookSuccess, (state,{ addressBook })=> (
-            {
-                ...state, 
-                addressBook :addressBook,
-                loading: false,
-            }
-        )),
+       
      on(AddressBookActions.requestCV, state => (
             {
                 ...state, 

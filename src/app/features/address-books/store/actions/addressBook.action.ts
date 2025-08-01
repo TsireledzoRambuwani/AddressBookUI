@@ -9,10 +9,6 @@ export const AddressBookActions = createActionGroup({
     'Load Address Books Success': props<{ addressBooks: AddressBook[] }>(),
     'Load Address Books Fail': props<{ error: string; }>(),
 
-    'Load Address Book': props<{id :string}>(),
-    'Load Address Book Success': props<{ addressBook: AddressBook}>(),
-    'Load Address Book Fail': props<{ error: string; }>(),
-
     'Request CV': props<{id :string}>(),
     'Request CV Success': props<{ serviceResponse: ApiServiceResponse }>(),
     'Request CV Fail': props<{ error: string; }>(),

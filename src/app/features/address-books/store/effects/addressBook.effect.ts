@@ -33,30 +33,7 @@ alert = inject(ShowAlertService);
       )
     ));
 
-
-      loadAddressBook$ = createEffect(() => 
-         this.actions$.pipe(
-      ofType(AddressBookActions.loadAddressBook),
-      exhaustMap((action) => 
-        this.addressBooksService.getAddressBook(action.id)
-        .pipe(
-          map((res :any) => 
-            { 
-                if([200,2001].includes(res.code))
-                    {
-
-                    return AddressBookActions.loadAddressBookSuccess({ addressBook: res.data})
-                    }
-                else{
-                        return AddressBookActions.loadAddressBookFail({ error: res.message})
-                    }
-
-            }),
-          catchError((error) => of(AddressBookActions.loadAddressBookFail({ error: error.error})))
-        )
-      )
-    ));
-
+     
       requestCV$ = createEffect(() => 
          this.actions$.pipe(
       ofType(AddressBookActions.requestCV),
@@ -67,15 +44,20 @@ alert = inject(ShowAlertService);
             { 
                 if([200,2001].includes(res.code))
                     {
-
+                        this.alert.showSuccess("Successfully Requested CV.")
                     return AddressBookActions.requestCVSuccess({ serviceResponse: res.data})
                     }
+                    
                 else{
+                        this.alert.showError(res.message)
                         return AddressBookActions.requestCVFail({ error: res.message})
                     }
 
             }),
-          catchError((error) => of(AddressBookActions.requestCVFail({ error: error.error})))
+          catchError((error) => of(
+            
+            AddressBookActions.requestCVFail({ error: error.error})
+          ))
         )
       )
     ));

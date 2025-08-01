@@ -1,8 +1,8 @@
     <div class="row mt-3">
           <div class="col-lg-6 col-md-6 col-sm-12">
-            <button  class="btn" mat-raised-button> Website </button>
+            <a  [href]="websiteUrl()" class="btn" mat-raised-button> Website </a>
           </div>
           <div class="col-lg-6 col-md-6 col-sm-12">
-              <button class="btn" mat-raised-button> Request CV</button>
+              <button class="btn" mat-raised-button (click)="onRequestCV()"> Request CV</button>
         </div>
       </div>

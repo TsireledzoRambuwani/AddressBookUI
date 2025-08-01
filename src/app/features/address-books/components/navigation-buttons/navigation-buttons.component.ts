@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, input, output, Output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
@@ -10,5 +10,27 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './navigation-buttons.component.scss'
 })
 export class NavigationButtonsComponent {
+  currentIndex = input.required<number>();
+  addressBookLength = input.required<number>();
+  next = output();  
+  previous = output();  
+  first = output();  
+  last = output();  
 
-}
+
+  navigateFirst(){
+      this.first.emit();
+      }
+
+   navigateNext(){
+    this.next.emit();
+      }
+
+  navigatePrevious(){
+    this.previous.emit();
+  }
+
+  navigateLast(){
+    this.last.emit();
+  }
+    }
