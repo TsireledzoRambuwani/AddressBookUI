@@ -1,0 +1,22 @@
+.responsive-links{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+}
+
+.divider{
+    display: inline;
+}
+
+@media (max-width: 600px) {
+    .responsive-links{
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .divider{
+    display: none;
+}
+
+}

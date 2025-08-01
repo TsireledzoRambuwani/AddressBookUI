@@ -13,6 +13,7 @@ import { NavigationButtonsComponent } from '../../components/navigation-buttons/
 import { ProfileButtonsComponent } from '../../components/profile-buttons/profile-buttons.component';
 import { ProfileInformationComponent } from '../../components/profile-information/profile-information.component';
 
+
 @Component({
   selector: 'app-address-book',
   imports: [
