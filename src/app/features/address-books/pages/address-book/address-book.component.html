@@ -2,7 +2,7 @@
   <app-header/>
   <app-loading-spinner *ngIf="(loading$ | async)!"/>
 
-  @if(addressBooks.length > 0)
+  @if(addressBooks().length > 0)
   {
       <div class="row">
 
@@ -27,7 +27,7 @@
           (next)="navigateNext()"
           (previous)="navigatePrevious()"
           [currentIndex]="currentIndex()"
-          [addressBookLength]="addressBooks.length"
+          [addressBookLength]="addressBooks().length"
           />
 
       </div>

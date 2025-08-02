@@ -14,8 +14,9 @@ export interface AddressBook{
 
 export interface AddressBookModel extends EntityState<AddressBook>
 {
+
     addressBooks:AddressBook[],
     loading:boolean,
-    error: string;
+    error: string |null;
     
 }

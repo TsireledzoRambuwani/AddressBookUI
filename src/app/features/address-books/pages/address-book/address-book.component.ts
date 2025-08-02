@@ -1,5 +1,5 @@
 import { Component, inject, OnDestroy, OnInit, signal } from '@angular/core';
-import { HeaderComponent } from '../../components/header/header.component';
+import { HeaderComponent } from '../../../app-header/components/header/header.component';
 import { LoadingSpinnerComponent } from '../../../../shared/components/loading-spinner/loading-spinner.component';
 import { Observable, Subscription } from 'rxjs';
 import { AddressBook } from '../../models/addressbook.model';
@@ -31,10 +31,10 @@ import { ProfileInformationComponent } from '../../components/profile-informatio
 })
 export class AddressBookComponent implements OnInit,OnDestroy {
 
-addressBooks! :AddressBook[];
+addressBooks = signal<AddressBook[]>([]);;
 loading$!: Observable<boolean>;
 subscription!: Subscription;
-currentIndex =signal(0);
+currentIndex = signal(0);
 currentAddressBook!: AddressBook;
 
 store = inject(Store);
@@ -51,15 +51,15 @@ store = inject(Store);
           .subscribe(res =>
             {
               
-                this.addressBooks = res
+                this.addressBooks.set(res);
                 this.getAddressBook(0);
           });
     }
 
     getAddressBook(index: number){ 
-       if(index >= 0 && index < this.addressBooks?.length){
+       if(index >= 0 && index < this.addressBooks().length){
         this.currentIndex.set(index);
-        this.currentAddressBook = this.addressBooks[this.currentIndex()]   
+        this.currentAddressBook = this.addressBooks()[this.currentIndex()]   
        }   
 
   }
@@ -74,7 +74,7 @@ store = inject(Store);
   }
 
    navigateNext(){
-    if(this.currentIndex() < this.addressBooks.length -1){
+    if(this.currentIndex() < this.addressBooks().length -1){
       this.getAddressBook(this.currentIndex() + 1);
     }
   
@@ -87,7 +87,7 @@ store = inject(Store);
   }
 
   navigateLast(){
-    this.getAddressBook(this.addressBooks.length - 1);
+    this.getAddressBook(this.addressBooks().length - 1);
   }
 
     ngOnDestroy() {

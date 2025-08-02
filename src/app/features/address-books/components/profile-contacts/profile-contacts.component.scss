@@ -5,11 +5,16 @@
 
 }
 
+.text-icon{
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
 .divider{
     display: inline;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
     .responsive-links{
         flex-direction: column;
         gap: 4px;
@@ -19,4 +24,8 @@
     display: none;
 }
 
+}
+
+.header-icon{
+ color: #0033AA;
 }
