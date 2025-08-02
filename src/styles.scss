@@ -1,10 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
 
-/* Importing Bootstrap SCSS file. */
 @use 'bootstrap/scss/bootstrap';
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+    background: #0033AA;
+background: linear-gradient(90deg,rgb(1, 13, 75) 0%, rgb(58, 52, 242) 50%, rgb(1, 13, 75) 100%);
+
+     margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
 
 
 .alert-success{
@@ -13,6 +17,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .alert-error{
-    background-color: #f44336;
+    background-color: #f44336 !important;
     color: white;   
 }

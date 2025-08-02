@@ -1,4 +1,4 @@
 export interface ApiServiceResponse{
-    success:boolean;
+    succeeded:boolean;
     errors:string;
 }

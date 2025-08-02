@@ -1,10 +1,16 @@
-    <div class="row mb-3">
+    <div class="row mb-3 mt-3">
       <div class="col-lg-12 col-md-12 col-sm-12">
-          <h3>{{addressBook().firstname}} {{addressBook().surname}} </h3> 
+      <mat-card appearance="outlined">
+        <mat-card-header>
+          <mat-card-title><strong>{{addressBook().firstname}} {{addressBook().surname}} </strong></mat-card-title>
+        </mat-card-header>
+          <mat-card-content>
+              <div class="scrollable-paragraph">
+                    <p>{{addressBook().about}}</p>
+                    </div>
+            </mat-card-content>
+      </mat-card>
 
-           <div class="scrollable-paragraph">
-          <p>{{addressBook().about}}</p>
-          </div>
       </div>
     </div>
 

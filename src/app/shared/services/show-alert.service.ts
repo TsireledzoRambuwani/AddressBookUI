@@ -10,18 +10,17 @@ export class ShowAlertService {
 
   showSuccess(message: string) {
     this.snackBar.open(message, 'Close', {
-      horizontalPosition:"right",
+      horizontalPosition:"center",
       verticalPosition:"top",
-      duration: 3000,
+      duration: 5000,
       panelClass:['alert-success']
     });
   }
 
   showError(message: string) {
     this.snackBar.open(message, 'Close', {
-      horizontalPosition:"right",
+      horizontalPosition:"center",
       verticalPosition:"top",
-      duration: 3000,
       panelClass:['alert-error']
     });
   }

@@ -6,5 +6,5 @@ export const routes: Routes = [
 
     { path:'', pathMatch: 'full', redirectTo:"addressBook" },
     { path:'addressBook', component: AddressBookComponent },
-    {path : '***' , redirectTo:"addressBook"}
+    { path : '***' , redirectTo:"addressBook"}
 ];

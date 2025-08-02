@@ -1,4 +1,4 @@
-import { Component, EventEmitter, input, output, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, input, output, Output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
@@ -7,7 +7,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatButtonModule
   ],
   templateUrl: './navigation-buttons.component.html',
-  styleUrl: './navigation-buttons.component.scss'
+  styleUrl: './navigation-buttons.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavigationButtonsComponent {
   currentIndex = input.required<number>();

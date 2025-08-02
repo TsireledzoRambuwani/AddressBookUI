@@ -42,14 +42,15 @@ alert = inject(ShowAlertService);
         .pipe(
           map((res :any) => 
             { 
-                if([200,2001].includes(res.code))
+                if([200,2001].includes(res.code) && res.data.succeeded)
                     {
                         this.alert.showSuccess("Successfully Requested CV.")
                     return AddressBookActions.requestCVSuccess({ serviceResponse: res.data})
                     }
                     
                 else{
-                        this.alert.showError(res.message)
+           
+                        this.alert.showError(res.data.error)
                         return AddressBookActions.requestCVFail({ error: res.message})
                     }
 
